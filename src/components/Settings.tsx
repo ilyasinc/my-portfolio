@@ -2,7 +2,7 @@ import { AnchorHTMLAttributes, forwardRef, Fragment } from 'react';
 import clsx from 'clsx';
 import { useTheme } from 'next-themes';
 import { Menu, Transition } from '@headlessui/react';
-import { BeakerIcon } from '@heroicons/react/24/solid';
+
 import { CogIcon } from '@heroicons/react/24/solid';
 interface MenuLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   active: boolean;

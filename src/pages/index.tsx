@@ -1,11 +1,10 @@
 import Button from '@/components/Button';
 import { Layout } from '@/components/layouts';
 import Settings from '@/components/Settings';
-import { useTheme } from 'next-themes';
+
 import Image from 'next/image';
-import memoji from '/try1.png';
+
 export default function Home() {
-  const { theme, setTheme } = useTheme();
   const navigationItems = [
     {
       href: '/Projects',
