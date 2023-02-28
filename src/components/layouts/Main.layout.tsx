@@ -5,7 +5,7 @@ interface LayoutProps {
 }
 const mainLayout: FC<LayoutProps> = ({ children }) => {
   return (
-    <main className="flex flex-col justify-center items-center min-h-screen px-10 bg-white dark:bg-black/60">
+    <main className="flex flex-col justify-center items-center min-h-screen px-10 bg-gray-200 dark:bg-black/60">
       {children}
     </main>
   );
