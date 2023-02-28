@@ -16,7 +16,7 @@ interface stylesType {
 }
 const variantStyles: stylesType = {
   primary:
-    'bg-none font-semibold bg-teal-500 text-white hover:bg-black active:bg-zinc-800 active:text-zinc-100/70 rounded-lg border-4 border-teal-500 dark:bg-black dark:hover:bg-teal-500 dark:active:bg-teal-500 dark:active:text-zinc-100/70 dark:border-4',
+    'bg-none font-semibold bg-teal-500 text-white hover:bg-zinc-700 rounded-lg dark:bg-black dark:hover:bg-teal-500  dark:border-teal-500 dark:border-2',
 };
 
 type LinkButtonProps = ButtonProps & LinkProps;
