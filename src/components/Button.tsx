@@ -1,14 +1,16 @@
 import Link from 'next/link';
 import clsx from 'clsx';
 import { LinkProps } from 'next/link';
-
+import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import { WithClassName, WithChildren } from '@/types/common';
-
+import { PaperAirplaneIcon } from '@heroicons/react/24/solid';
 interface ButtonProps extends WithClassName, WithChildren {
   href?: string;
   variant?: string;
   onClick?: string;
   externalLink?: boolean;
+  arrow?: boolean;
+  icon?: string;
 }
 interface stylesType {
   [key: string]: string;
@@ -27,6 +29,7 @@ const Button: React.FC<LinkButtonProps> = ({
   href,
   children,
   externalLink = false,
+  arrow = false,
   ...props
 }) => {
   className = clsx(
@@ -43,6 +46,7 @@ const Button: React.FC<LinkButtonProps> = ({
       {...props}
     >
       {children}
+      {arrow ? <ArrowRightIcon className="h-3 w-3 stroke-white" /> : undefined}
     </Link>
   );
 };

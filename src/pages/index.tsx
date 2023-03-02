@@ -41,9 +41,8 @@ export default function Home() {
             <Settings />
           </div>
         </div> */}
-        <Navbar />
+
         <div className="flex flex-col p-[45px] sm:p-[50px] mg:p-[40px] lg:p-[90px] rounded-2xl  shadow-black/50  shadow-2xl hover:-translate-y-4 hover:bg-white hover:backdrop-blur-[1em] transition dark:bg-black hover:shadow-teal-400">
-          <div className="flex w-full justify-end"></div>
           <div className="flex flex-col items-center justify-center">
             <Image src="/try1.png" width={300} height={300} alt="/" />
             <div className="max-w-md sm:max-w-lg md:sm:max-w-2xl lg:sm:max-w-3xl w-full text-center">
@@ -58,7 +57,7 @@ export default function Home() {
                 {navigationItems.map((item, index) => {
                   return (
                     <div key={index}>
-                      <Button href={item.href} variant="primary" className="">
+                      <Button href={item.href} variant="primary" arrow={true}>
                         {item.text}
                       </Button>
                     </div>

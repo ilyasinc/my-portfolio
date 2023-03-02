@@ -61,8 +61,7 @@ const Settings = () => {
       <Menu as="div" className="relative inline-block ">
         {({ open }): JSX.Element => (
           <>
-            <Menu.Button className=" bg-teal-500 font-semibold text-zinc-100 hover:bg-zinc-700 active:bg-teal-800 active:text-teal-900/70 dark:bg-black  dark:border-teal-500 dark:hover:bg-teal-400 dark:border-2 dark:active:bg-teal-400 dark:active:text-zinc-100/70 inline-flex items-center justify-center rounded-md py-2 px-3 transition active:transition-none  ">
-              <h1>Settings</h1>
+            <Menu.Button className=" bg-teal-500 font-semibold text-zinc-100 hover:bg-zinc-700 active:bg-teal-800 active:text-teal-900/70 dark:bg-black  dark:border-teal-500 dark:hover:bg-teal-400 dark:border-2 dark:active:bg-teal-400 dark:active:text-zinc-100/70 inline-flex items-center justify-center rounded-md py-2 px-3 transition active:transition-none ">
               <CogIcon
                 className="h-6 w-6 dark:text-text-white text-white"
                 aria-hidden="true"
