@@ -1,11 +1,13 @@
-import { AnchorHTMLAttributes, forwardRef, Fragment } from 'react';
+import { AnchorHTMLAttributes, forwardRef, Fragment, ReactNode } from 'react';
 import clsx from 'clsx';
 import { useTheme } from 'next-themes';
 import { Menu, Transition } from '@headlessui/react';
-import { MoonIcon } from '@heroicons/react/24/solid';
-import { SunIcon } from '@heroicons/react/24/solid';
 import { CogIcon } from '@heroicons/react/24/solid';
-interface MenuLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+import { WithChildren, WithClassName } from '@/types/common';
+
+interface MenuLinkProps
+  extends WithChildren,
+    AnchorHTMLAttributes<HTMLAnchorElement> {
   active: boolean;
 }
 
@@ -28,11 +30,21 @@ const StyledMenuItem = forwardRef<HTMLAnchorElement, MenuLinkProps>(
     );
   }
 );
-export function Pulse() {
+
+interface PulseProps extends WithClassName {}
+
+export function Pulse({ className }: PulseProps) {
   return (
-    <span className="relative flex h-2 w-2 mr-2">
-      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-500 "></span>
-    </span>
+    <div className="flex relative ">
+      <span className="relative flex h-3 w-3 mr-2">
+        <span
+          className={clsx(
+            `animate-ping absolute inline-flex h-full w-full rounded-full `,
+            className
+          )}
+        ></span>
+      </span>
+    </div>
   );
 }
 const Settings = () => {
@@ -40,17 +52,17 @@ const Settings = () => {
 
   const settingItems = [
     {
-      icon: theme === 'light' ? Pulse() : undefined,
+      icon: theme === 'light' ? <Pulse className="bg-rose-600" /> : undefined,
       text: 'Light Theme',
       onClick: () => setTheme('light'),
     },
     {
-      icon: theme === 'dark' ? Pulse() : undefined,
+      icon: theme === 'dark' ? <Pulse className="bg-teal-500" /> : undefined,
       text: 'Dark Theme',
       onClick: () => setTheme('dark'),
     },
     {
-      icon: theme === 'system' ? Pulse() : undefined,
+      icon: theme === 'system' ? <Pulse className="bg-rose-600" /> : undefined,
       text: 'System Theme',
       onClick: () => setTheme('system'),
     },
@@ -58,7 +70,7 @@ const Settings = () => {
   console.log(settingItems);
   return (
     <>
-      <Menu as="div" className="relative inline-block ">
+      <Menu as="div" className="relative inline-block z-10">
         {({ open }): JSX.Element => (
           <>
             <Menu.Button className=" bg-teal-500 font-semibold text-zinc-100 hover:bg-zinc-700 active:bg-teal-800 active:text-teal-900/70 dark:bg-black  dark:border-teal-500 dark:hover:bg-teal-400 dark:border-2 dark:active:bg-teal-400 dark:active:text-zinc-100/70 inline-flex items-center justify-center rounded-md py-2 px-3 transition active:transition-none ">
